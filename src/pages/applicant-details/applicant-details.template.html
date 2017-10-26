@@ -13,7 +13,7 @@
 
     <ion-card>
       <ion-card-header>
-        Applicant Video
+        Video Analysis
       </ion-card-header>
       <ion-card-content>
 
@@ -21,13 +21,12 @@
           <h5>Smile Index</h5>
           <video-chart [frames]="analysisFrames" type="smile"></video-chart>
 
-          <h5>Video Brightness</h5>
+          <h5>Brightness</h5>
           <video-chart [frames]="analysisFrames" type="brightness"></video-chart>
 
-          <h5>Video Sharpness</h5>
+          <h5>Sharpness</h5>
           <video-chart [frames]="analysisFrames" type="sharpness"></video-chart>
         </div>
-
 
         <button ion-button>Play Video</button>
       </ion-card-content>
@@ -80,6 +79,18 @@
         <ion-item>
           <ion-label stacked>Phone number</ion-label>
           <ion-input disabled value="{{ applicant['phone_number'] }}"></ion-input>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        Submission Details
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-label stacked>Timestamp</ion-label>
+          <ion-input disabled value="{{ applicant['created'] | date : 'medium'}}"></ion-input>
         </ion-item>
       </ion-card-content>
     </ion-card>

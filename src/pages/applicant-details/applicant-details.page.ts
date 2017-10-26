@@ -23,13 +23,15 @@ export class ApplicationDetailsPage {
     if (this.applicant === undefined) {
       this.applicantsService.getApplicant(1).subscribe(data => {
         this.applicant = data;
-        this.loadVideoAnalysis();
+        this.loadVideoAnalysis(this.applicant.hash);
       });
+    } else {
+      this.loadVideoAnalysis(this.applicant.hash);
     }
   }
 
-  loadVideoAnalysis() {
-    this.videoAnalyticsService.getAnalysis('test-video1').subscribe(report => {
+  loadVideoAnalysis(applicantHash: string) {
+    this.videoAnalyticsService.getAnalysis(applicantHash).subscribe(report => {
       this.analysisFrames = report['analysis'];
       console.log('frames analyzed', this.analysisFrames);
     });

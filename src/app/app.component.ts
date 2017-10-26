@@ -13,7 +13,7 @@ import {ApplicationDetailsPage} from "../pages/applicant-details/applicant-detai
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = ApplicationDetailsPage;
+  rootPage: any = ApplicantsPage;
 
   pages: Array<{ title: string, component: any }>;
 

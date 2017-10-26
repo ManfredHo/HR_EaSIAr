@@ -36,8 +36,6 @@ export class VideoChartComponent implements OnInit {
         time: item.time,
       };
 
-      console.log(this.chartType);
-
       switch (this.chartType) {
         case 'smile':
           if (item['face_details'][0]['Smile']['Value']) {
@@ -60,8 +58,6 @@ export class VideoChartComponent implements OnInit {
 
   generateGraph(frameData) {
     let targetData = this.extractData(frameData);
-
-    console.log(targetData);
 
     let xMin = 100, xMax = 0;
     let yMin = 100, yMax = 0;
@@ -87,8 +83,8 @@ export class VideoChartComponent implements OnInit {
 
     let marginBottom = 30;
     let marginLeft = 30;
-    let marginRight = 20;
-    let marginTop = 30;
+    let marginRight = 10;
+    let marginTop = 10;
 
     let svg = d3.select(this.elementRef.nativeElement).select('.container').append('svg').attr('width', chartWidth).attr('height', chartHeight);
     let g = svg.append("g");
@@ -121,7 +117,7 @@ export class VideoChartComponent implements OnInit {
 
     // y axis
     g.append("g")
-      .attr('transform', 'translate(' + marginLeft + ',' + marginBottom + ')')
+      .attr('transform', 'translate(' + marginLeft + ',' + marginTop + ')')
       .call(d3.axisLeft(y).ticks(5));
   }
 }
