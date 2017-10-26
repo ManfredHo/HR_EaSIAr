@@ -21,7 +21,18 @@ page-applicant-detail {
   .video-charts {
     h5 {
       display: block;
-      font-weight:bold;
+      font-weight: bold;
     }
+
+    padding-left: 16px;
+  }
+
+  .user-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 60px;
+    background-size: cover;
+    background-position: center;
+    display: inline-block;
   }
 }

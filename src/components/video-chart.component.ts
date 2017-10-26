@@ -12,7 +12,7 @@ export class VideoChartComponent implements OnInit {
 
   @Input()
   set frames(frames) {
-    if (frames !== undefined) {
+    if (frames !== undefined && frames !== null) {
       this.generateGraph(frames);
     }
   }
@@ -29,35 +29,57 @@ export class VideoChartComponent implements OnInit {
   ngOnInit() {
   };
 
-  extractData(frameData) {
+  // extractData(frameData) {
+  //   let data = [];
+  //   frameData.forEach(item => {
+  //     let result = {
+  //       time: item.time,
+  //     };
+  //
+  //     switch (this.chartType) {
+  //       case 'smile':
+  //         if (item['face_details'][0]['Smile']['Value']) {
+  //           result['value'] = item['face_details'][0]['Smile']['Confidence'];
+  //         } else {
+  //           result['value'] = 0;
+  //         }
+  //         break;
+  //       case 'brightness':
+  //         result['value'] = item['face_details'][0]['Quality']['Brightness'];
+  //         break;
+  //       case 'sharpness':
+  //         result['value'] = item['face_details'][0]['Quality']['Sharpness'];
+  //         break;
+  //       case 'emotion-happy':
+  //         result['value'] = this.getEmotion(item['face_details'][0]['Emotions'], 'HAPPY');
+  //         if (result['value'] === null) {
+  //           return;
+  //         }
+  //         break;
+  //       case 'emotion-calm':
+  //         result['value'] = this.getEmotion(item['face_details'][0]['Emotions'], 'CALM');
+  //         if (result['value'] === null) {
+  //           return;
+  //         }
+  //         break;
+  //
+  //       case 'emotion-confused':
+  //         result['value'] = this.getEmotion(item['face_details'][0]['Emotions'], 'CONFUSED');
+  //         if (result['value'] === null) {
+  //           return;
+  //         }
+  //         break;
+  //     }
+  //
+  //     data.push(result);
+  //   });
+  //
+  //   return data;
+  // }
 
-    return frameData.map(item => {
-      let result = {
-        time: item.time,
-      };
-
-      switch (this.chartType) {
-        case 'smile':
-          if (item['face_details'][0]['Smile']['Value']) {
-            result['value'] = item['face_details'][0]['Smile']['Confidence'];
-          } else {
-            result['value'] = 0;
-          }
-          break;
-        case 'brightness':
-          result['value'] = item['face_details'][0]['Quality']['Brightness'];
-          break;
-        case 'sharpness':
-          result['value'] = item['face_details'][0]['Quality']['Sharpness'];
-          break;
-      }
-
-      return result;
-    });
-  }
 
   generateGraph(frameData) {
-    let targetData = this.extractData(frameData);
+    let targetData = frameData;//this.extractData(frameData);
 
     let xMin = 100, xMax = 0;
     let yMin = 100, yMax = 0;
@@ -79,7 +101,7 @@ export class VideoChartComponent implements OnInit {
     }
 
     let chartWidth = 400;
-    let chartHeight = 150;
+    let chartHeight = 120;
 
     let marginBottom = 30;
     let marginLeft = 30;

@@ -9,7 +9,6 @@ export class ApplicantsService {
   private baseUrl: string = MainConfig.baseUrl;
 
   constructor(private http: Http) {
-
   }
 
   getApplicantLists(): Observable<Applicant[]> {
@@ -23,6 +22,14 @@ export class ApplicantsService {
   getApplicant(id): Observable<object> {
     return Observable.create(observer => {
       this.http.get(this.baseUrl + 'form-submission/get/' + id).subscribe(response => {
+        observer.next(response.json()['response']);
+      });
+    });
+  }
+
+  deleteApplicant(hash): Observable<object> {
+    return Observable.create(observer => {
+      this.http.get(this.baseUrl + 'form-submission/delete/' + hash).subscribe(response => {
         observer.next(response.json()['response']);
       });
     });

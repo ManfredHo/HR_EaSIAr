@@ -13,7 +13,7 @@ export class ApplicantsPage {
   constructor(public navCtrl: NavController, private applicantsService: ApplicantsService) {
   }
 
-  ionViewDidLoad() {
+  ionViewWillEnter() {
     this.applicantsService.getApplicantLists().subscribe(applicants => {
       this.applicants = applicants;
       console.log('Got list of applicants', applicants);
