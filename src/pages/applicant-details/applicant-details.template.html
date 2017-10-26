@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Applicant Details</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <div *ngIf="applicant">
+
+    <h4>Personal Information</h4>
+
+    <ion-item>
+      <ion-label stacked>Full name</ion-label>
+      <ion-input disabled value="{{ applicant['full_name'] }}"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>ID/FIN</ion-label>
+      <ion-input disabled value="{{ applicant['id_number'] }}"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Nationality</ion-label>
+      <ion-input disabled value="{{ applicant['nationality'] }}"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Country of Residence</ion-label>
+      <ion-input disabled value="{{ applicant['country_of_residence'] }}"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Country of Birth</ion-label>
+      <ion-input disabled value="{{ applicant['birth_country'] }}"></ion-input>
+    </ion-item>
+
+    <h4 class="padding-top">Contact Information</h4>
+
+    <ion-item>
+      <ion-label stacked>Email</ion-label>
+      <ion-input disabled value="{{ applicant['email'] }}"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Phone number</ion-label>
+      <ion-input disabled value="{{ applicant['phone_number'] }}"></ion-input>
+    </ion-item>
+
+  </div>
+
+</ion-content>

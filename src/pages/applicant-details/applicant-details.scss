@@ -1,0 +1,16 @@
+page-applicant-detail {
+  ion-content {
+    h4 {
+      padding-left: 12px;
+
+      &.padding-top {
+        padding-top: 24px;
+      }
+    }
+
+    .text-input[disabled] {
+      color: #333;
+      opacity: 1;
+    }
+  }
+}

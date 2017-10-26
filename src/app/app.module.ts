@@ -1,21 +1,26 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
-import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import {BrowserModule} from '@angular/platform-browser';
+import {HttpModule} from '@angular/http';
+import {ErrorHandler, NgModule} from '@angular/core';
+import {IonicApp, IonicErrorHandler, IonicModule} from 'ionic-angular';
 
-import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+import {MyApp} from './app.component';
+import {HomePage} from '../pages/home/home';
+import {ApplicantsPage} from '../pages/list/list';
 
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
+import {StatusBar} from '@ionic-native/status-bar';
+import {SplashScreen} from '@ionic-native/splash-screen';
+import {ApplicantsService} from "../common/applicants.service";
+import {ApplicationDetailsPage} from "../pages/applicant-details/applicant-details.page";
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ListPage
+    ApplicantsPage,
+    ApplicationDetailsPage
   ],
   imports: [
+    HttpModule,
     BrowserModule,
     IonicModule.forRoot(MyApp),
   ],
@@ -23,12 +28,16 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage
+    ApplicantsPage,
+    ApplicationDetailsPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+
+    ApplicantsService
   ]
 })
-export class AppModule {}
+export class AppModule {
+}
