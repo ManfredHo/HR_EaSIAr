@@ -1,11 +1,12 @@
 import {Injectable} from "@angular/core";
 import {Observable} from "rxjs/Observable";
 import {Http} from "@angular/http";
+import {MainConfig} from "./mainConfig";
 
 @Injectable()
 export class ApplicantsService {
 
-  private baseUrl: string = "http://127.0.0.1:8000/";
+  private baseUrl: string = MainConfig.baseUrl;
 
   constructor(private http: Http) {
 

@@ -11,13 +11,17 @@ import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 import {ApplicantsService} from "../common/applicants.service";
 import {ApplicationDetailsPage} from "../pages/applicant-details/applicant-details.page";
+import {VideoAnalyticsService} from "../common/video-analytics.service";
+import {VideoChartComponent} from "../components/video-chart.component";
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     ApplicantsPage,
-    ApplicationDetailsPage
+    ApplicationDetailsPage,
+
+    VideoChartComponent
   ],
   imports: [
     HttpModule,
@@ -36,7 +40,8 @@ import {ApplicationDetailsPage} from "../pages/applicant-details/applicant-detai
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
 
-    ApplicantsService
+    ApplicantsService,
+    VideoAnalyticsService
   ]
 })
 export class AppModule {

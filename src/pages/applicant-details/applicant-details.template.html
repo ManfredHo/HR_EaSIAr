@@ -11,45 +11,77 @@
 
   <div *ngIf="applicant">
 
-    <h4>Personal Information</h4>
+    <ion-card>
+      <ion-card-header>
+        Applicant Video
+      </ion-card-header>
+      <ion-card-content>
 
-    <ion-item>
-      <ion-label stacked>Full name</ion-label>
-      <ion-input disabled value="{{ applicant['full_name'] }}"></ion-input>
-    </ion-item>
+        <div class="video-charts">
+          <h5>Smile Index</h5>
+          <video-chart [frames]="analysisFrames" type="smile"></video-chart>
 
-    <ion-item>
-      <ion-label stacked>ID/FIN</ion-label>
-      <ion-input disabled value="{{ applicant['id_number'] }}"></ion-input>
-    </ion-item>
+          <h5>Video Brightness</h5>
+          <video-chart [frames]="analysisFrames" type="brightness"></video-chart>
 
-    <ion-item>
-      <ion-label stacked>Nationality</ion-label>
-      <ion-input disabled value="{{ applicant['nationality'] }}"></ion-input>
-    </ion-item>
+          <h5>Video Sharpness</h5>
+          <video-chart [frames]="analysisFrames" type="sharpness"></video-chart>
+        </div>
 
-    <ion-item>
-      <ion-label stacked>Country of Residence</ion-label>
-      <ion-input disabled value="{{ applicant['country_of_residence'] }}"></ion-input>
-    </ion-item>
 
-    <ion-item>
-      <ion-label stacked>Country of Birth</ion-label>
-      <ion-input disabled value="{{ applicant['birth_country'] }}"></ion-input>
-    </ion-item>
+        <button ion-button>Play Video</button>
+      </ion-card-content>
+    </ion-card>
 
-    <h4 class="padding-top">Contact Information</h4>
+    <ion-card>
+      <ion-card-header>
+        Personal Information
+      </ion-card-header>
 
-    <ion-item>
-      <ion-label stacked>Email</ion-label>
-      <ion-input disabled value="{{ applicant['email'] }}"></ion-input>
-    </ion-item>
+      <ion-card-content>
+        <ion-item>
+          <ion-label stacked>Full name</ion-label>
+          <ion-input disabled value="{{ applicant['full_name'] }}"></ion-input>
+        </ion-item>
 
-    <ion-item>
-      <ion-label stacked>Phone number</ion-label>
-      <ion-input disabled value="{{ applicant['phone_number'] }}"></ion-input>
-    </ion-item>
+        <ion-item>
+          <ion-label stacked>ID/FIN</ion-label>
+          <ion-input disabled value="{{ applicant['id_number'] }}"></ion-input>
+        </ion-item>
 
+        <ion-item>
+          <ion-label stacked>Nationality</ion-label>
+          <ion-input disabled value="{{ applicant['nationality'] }}"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label stacked>Country of Residence</ion-label>
+          <ion-input disabled value="{{ applicant['country_of_residence'] }}"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label stacked>Country of Birth</ion-label>
+          <ion-input disabled value="{{ applicant['birth_country'] }}"></ion-input>
+        </ion-item>
+
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        Contact Information
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-label stacked>Email</ion-label>
+          <ion-input disabled value="{{ applicant['email'] }}"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label stacked>Phone number</ion-label>
+          <ion-input disabled value="{{ applicant['phone_number'] }}"></ion-input>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
   </div>
-
 </ion-content>
