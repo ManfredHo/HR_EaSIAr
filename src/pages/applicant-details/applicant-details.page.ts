@@ -22,6 +22,7 @@ export class ApplicationDetailsPage implements OnInit {
   userImage: string = '';
 
   videoDuration: string = '';
+  videoQuality: string = '';
 
   constructor(public navCtrl: NavController, private navParams: NavParams,
               private applicantsService: ApplicantsService,
@@ -61,7 +62,39 @@ export class ApplicationDetailsPage implements OnInit {
       for (let prop in this.analysisFrames) {
         this.analysisFrames[prop] = this.videoAnalyticsService.extractData(analysis, prop);
       }
+
+      this.displayAnalysis();
     });
+  }
+
+  displayAnalysis() {
+    this.checkVideoQuality();
+  }
+
+  checkVideoQuality() {
+    let brightness = this.analysisFrames['brightness'];
+    let sharpness = this.analysisFrames['sharpness'];
+
+    let brightnessValue = brightness.map(item => {
+      return item.value;
+    });
+
+    let sharpnessValue = sharpness.map(item => {
+      return item.value;
+    });
+
+    let minBrightness = Math.min.apply(null, brightnessValue);
+    let minSharpness = Math.min.apply(null, sharpnessValue);
+
+    console.log('Min values', minBrightness, minSharpness);
+
+    if (minBrightness > 90 && minSharpness > 40) {
+      this.videoQuality = 'Excellent';
+    } else if (minBrightness < 30 || minSharpness < 60) {
+      this.videoQuality = 'Terrible';
+    } else {
+      this.videoQuality = 'Average';
+    }
   }
 
   showActions() {
