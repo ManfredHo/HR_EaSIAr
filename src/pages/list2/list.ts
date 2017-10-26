@@ -7,14 +7,14 @@ import {ApplicationDetailsPage} from "../applicant-details/applicant-details.pag
   selector: 'page-list',
   templateUrl: 'list.html'
 })
-export class ApplicantsPage {
+export class Phase2ApplicantsPage {
   private applicants: object[];
 
   constructor(public navCtrl: NavController, private applicantsService: ApplicantsService) {
   }
 
   ionViewWillEnter() {
-    this.applicantsService.getApplicantLists(1).subscribe(applicants => {
+    this.applicantsService.getApplicantLists(2).subscribe(applicants => {
       this.applicants = applicants;
       console.log('Got list of applicants', applicants);
     });

@@ -13,15 +13,19 @@ import {ApplicantsService} from "../common/applicants.service";
 import {ApplicationDetailsPage} from "../pages/applicant-details/applicant-details.page";
 import {VideoAnalyticsService} from "../common/video-analytics.service";
 import {VideoChartComponent} from "../components/video-chart.component";
+import {VideoPlayerPage} from "../pages/video-player/video-player.page";
+import {Phase2ApplicantsPage} from "../pages/list2/list";
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     ApplicantsPage,
+    Phase2ApplicantsPage,
     ApplicationDetailsPage,
 
-    VideoChartComponent
+    VideoChartComponent,
+    VideoPlayerPage
   ],
   imports: [
     HttpModule,
@@ -33,7 +37,9 @@ import {VideoChartComponent} from "../components/video-chart.component";
     MyApp,
     HomePage,
     ApplicantsPage,
-    ApplicationDetailsPage
+    Phase2ApplicantsPage,
+    ApplicationDetailsPage,
+    VideoPlayerPage
   ],
   providers: [
     StatusBar,

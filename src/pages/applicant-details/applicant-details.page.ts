@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActionSheetController, NavController, NavParams} from 'ionic-angular';
 import {ApplicantsService} from "../../common/applicants.service";
 import {VideoAnalyticsService} from "../../common/video-analytics.service";
+import {VideoPlayerPage} from "../video-player/video-player.page";
 
 @Component({
   selector: 'page-applicant-detail',
@@ -119,5 +120,9 @@ export class ApplicationDetailsPage implements OnInit {
     actionSheet.present();
   }
 
-
+  playVideo() {
+    this.navCtrl.push(VideoPlayerPage, {
+      item: this.applicant
+    });
+  }
 }

@@ -11,9 +11,9 @@ export class ApplicantsService {
   constructor(private http: Http) {
   }
 
-  getApplicantLists(): Observable<Applicant[]> {
+  getApplicantLists(type: number): Observable<Applicant[]> {
     return Observable.create(observer => {
-      this.http.get(this.baseUrl + 'form-submission/list').subscribe(response => {
+      this.http.get(this.baseUrl + 'form-submission/list/phase/' + type).subscribe(response => {
         observer.next(response.json()['response']);
       });
     });
