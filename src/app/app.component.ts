@@ -15,7 +15,7 @@ import {HistoryPage} from "../pages/history/history.page";
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = ApplicantsPage;
+  rootPage: any = HomePage;
 
   pages: Array<{ title: string, component: any, count: number }>;
 
