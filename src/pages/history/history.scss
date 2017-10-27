@@ -2,14 +2,11 @@ page-history {
   ion-content {
     background-image: url("../assets/imgs/SIALAST.jpeg");
     background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 330px 550px;
-    background-position: 1px 50px;
-
+    background-size: cover;
   }
-  h3{
-font-size: 16px;
-text-align:center;
+  h3 {
+    font-size: 16px;
+    text-align: center;
     font-family: Georgia, serif;
     //line-height: 2;
 

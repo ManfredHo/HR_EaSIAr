@@ -1,11 +1,8 @@
 page-applicant-detail {
-  ion-content{
+  ion-content {
     background-image: url("../assets/imgs/SIALAST.jpeg");
     background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 500px 650px;
-    background-position: 1px 50px;
-
+    background-size: cover;
 
     h4 {
       padding-left: 12px;
@@ -32,7 +29,7 @@ page-applicant-detail {
     }
 
     //video-chart, h5 {
-      padding-left: 16px;
+    padding-left: 16px;
     //}
   }
 
@@ -44,7 +41,6 @@ page-applicant-detail {
     background-position: center;
     display: inline-block;
   }
-
 
 }
 

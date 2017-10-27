@@ -1,47 +1,46 @@
 page-list {
-      ion-content {
+  ion-content {
     background-image: url("../assets/imgs/SIALAST.jpeg");
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: 330px 550px;
-    background-position: 1px 50px;
+    background-size: cover;
 
   }
-h5 {
-  font-size: 16px;
-  text-align: center;
-  font-family: Georgia, serif;
-  //line-height: 2;
+  h5 {
+    font-size: 16px;
+    text-align: center;
+    font-family: Georgia, serif;
+    //line-height: 2;
 
-  color: rgb(245, 160, 20);
+    color: rgb(245, 160, 20);
 
-  background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.2);
 
-  margin: 24px;
-  padding: 10px;
+    margin: 24px;
+    padding: 10px;
 
-  line-height: 32px;
+    line-height: 32px;
 
-  border-radius: 5px;
+    border-radius: 5px;
 
-  //    position: fixed;
-  //bottom: 350px;
-  //right: 2px;
-  //width: 400px;
-  margin-bottom: 32px;
-}
+    //    position: fixed;
+    //bottom: 350px;
+    //right: 2px;
+    //width: 400px;
+    margin-bottom: 32px;
+  }
 
-   .input-wrapper{
-    background-color: rgba(255, 255, 255,0.4);
+  .input-wrapper {
+    background-color: rgba(255, 255, 255, 0.4);
     color: rgb(40, 40, 115);
-     font-size: 16px;
-  text-align: center;
-  font-family: Georgia, serif;
+    font-size: 16px;
+    text-align: center;
+    font-family: Georgia, serif;
   }
 
- .item.item-block.item-md{
-  colour: rgb(115, 115, 115);
-}
+  .item.item-block.item-md {
+    colour: rgb(115, 115, 115);
+  }
 }
 
 

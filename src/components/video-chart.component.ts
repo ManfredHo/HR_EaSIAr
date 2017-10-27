@@ -29,55 +29,6 @@ export class VideoChartComponent implements OnInit {
   ngOnInit() {
   };
 
-  // extractData(frameData) {
-  //   let data = [];
-  //   frameData.forEach(item => {
-  //     let result = {
-  //       time: item.time,
-  //     };
-  //
-  //     switch (this.chartType) {
-  //       case 'smile':
-  //         if (item['face_details'][0]['Smile']['Value']) {
-  //           result['value'] = item['face_details'][0]['Smile']['Confidence'];
-  //         } else {
-  //           result['value'] = 0;
-  //         }
-  //         break;
-  //       case 'brightness':
-  //         result['value'] = item['face_details'][0]['Quality']['Brightness'];
-  //         break;
-  //       case 'sharpness':
-  //         result['value'] = item['face_details'][0]['Quality']['Sharpness'];
-  //         break;
-  //       case 'emotion-happy':
-  //         result['value'] = this.getEmotion(item['face_details'][0]['Emotions'], 'HAPPY');
-  //         if (result['value'] === null) {
-  //           return;
-  //         }
-  //         break;
-  //       case 'emotion-calm':
-  //         result['value'] = this.getEmotion(item['face_details'][0]['Emotions'], 'CALM');
-  //         if (result['value'] === null) {
-  //           return;
-  //         }
-  //         break;
-  //
-  //       case 'emotion-confused':
-  //         result['value'] = this.getEmotion(item['face_details'][0]['Emotions'], 'CONFUSED');
-  //         if (result['value'] === null) {
-  //           return;
-  //         }
-  //         break;
-  //     }
-  //
-  //     data.push(result);
-  //   });
-  //
-  //   return data;
-  // }
-
-
   generateGraph(frameData) {
     let targetData = frameData;//this.extractData(frameData);
 
@@ -100,7 +51,7 @@ export class VideoChartComponent implements OnInit {
       yMax = 100;
     }
 
-    let chartWidth = 400;
+    let chartWidth = window.innerWidth - 40 * 2 - 16;
     let chartHeight = 120;
 
     let marginBottom = 30;
@@ -129,7 +80,7 @@ export class VideoChartComponent implements OnInit {
       .attr("d", valueline)
       .attr('fill', 'none')
       .attr('stroke-width', '2px')
-      .attr('stroke', '#000')
+      .attr('stroke', '#0c0')
       .attr('transform', 'translate(' + marginLeft + ',' + marginTop + ')');
 
     // x axis

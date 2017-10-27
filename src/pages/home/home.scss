@@ -3,12 +3,14 @@ page-home {
     background-image: url("../assets/imgs/SIALAST.jpeg");
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: 330px 550px;
-    background-position: 1px 50px;
+    background-size: cover;
+
+    //background-size: 330px 550px;
+    //background-position: 1px 50px;
 
   }
-  h3{
-font-size: 16px;
+  h3 {
+    font-size: 16px;
 
     font-family: Georgia, serif;
     //line-height: 2;
