@@ -15,7 +15,7 @@ export class VideoAnalyticsService {
   getAnalysis(name: string): Observable<object> {
     return Observable.create(observer => {
       this.http.get('https://s3-eu-west-1.amazonaws.com/team-easiar/video_pipe/results/' + name + '.json').subscribe(response => {
-        observer.next(response.json()['response']);
+        observer.next(response.json());
       });
     });
   }
