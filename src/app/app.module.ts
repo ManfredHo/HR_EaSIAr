@@ -15,6 +15,7 @@ import {VideoAnalyticsService} from "../common/video-analytics.service";
 import {VideoChartComponent} from "../components/video-chart.component";
 import {VideoPlayerPage} from "../pages/video-player/video-player.page";
 import {Phase2ApplicantsPage} from "../pages/list2/list";
+import {HistoryPage} from "../pages/history/history.page";
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import {Phase2ApplicantsPage} from "../pages/list2/list";
     ApplicantsPage,
     Phase2ApplicantsPage,
     ApplicationDetailsPage,
+    HistoryPage,
 
     VideoChartComponent,
     VideoPlayerPage
@@ -39,7 +41,8 @@ import {Phase2ApplicantsPage} from "../pages/list2/list";
     ApplicantsPage,
     Phase2ApplicantsPage,
     ApplicationDetailsPage,
-    VideoPlayerPage
+    VideoPlayerPage,
+    HistoryPage,
   ],
   providers: [
     StatusBar,
