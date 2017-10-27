@@ -53,7 +53,7 @@ export class ApplicationDetailsPage implements OnInit {
     let hash = this.applicant['hash'];
 
     this.loadVideoAnalysis(hash);
-    this.userImage = 'https://s3.amazonaws.com/team-easiar-media/video_pipe/frames/' + hash + '-0.jpg';
+    this.userImage = 'https://s3.amazonaws.com/team-easiar/video_pipe/frames/' + hash + '-0.jpg';
   }
 
   loadVideoAnalysis(applicantHash: string) {
