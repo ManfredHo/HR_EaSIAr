@@ -9,12 +9,15 @@
 
 <ion-content>
   <h5 style="padding-left:12px">Showing {{ applicants?.length }} applicants</h5>
-  <ion-list>
-    <button ion-item *ngFor="let applicant of applicants" (click)="showApplicantDetails(applicant)">
+
+    <ion-list>
+
+      <button ion-item *ngFor="let applicant of applicants" (click)="showApplicantDetails(applicant)">
       {{ applicant['full_name'] }} - {{ applicant['id_number']}}
 
       <ion-icon name="{{ applicant['gender'] == '1' ? 'male' : 'female' }}" style="float:right"></ion-icon>
 
     </button>
   </ion-list>
+
 </ion-content>
