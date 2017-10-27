@@ -1,4 +1,4 @@
-<ion-menu [content]="content">
+<ion-menu [content]="content" (ionOpen)="menuOpened()">
   <ion-header>
     <ion-toolbar>
       <ion-title>Menu</ion-title>
@@ -7,10 +7,18 @@
 
   <ion-content>
     <ion-list>
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)" class="menu-item">
         {{p.title}}
+
+        <div class="counter" *ngIf="p.count > 0">{{p.count}}</div>
       </button>
     </ion-list>
+
+    <div class="copyright">
+      &copy; 2017 EaSIAr
+    </div>
+
+
   </ion-content>
 
 </ion-menu>

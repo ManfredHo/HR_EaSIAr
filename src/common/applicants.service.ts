@@ -34,6 +34,14 @@ export class ApplicantsService {
       });
     });
   }
+
+  changePhase(hash: string, phase: number) {
+    return Observable.create(observer => {
+      this.http.get(this.baseUrl + 'form-submission/change-phase/' + hash + '/phase/' + phase).subscribe(response => {
+        observer.next(response.json()['response']);
+      });
+    });
+  }
 }
 
 export interface Applicant {

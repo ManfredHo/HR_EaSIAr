@@ -44,22 +44,42 @@
           <ion-input disabled value="{{ applicant['nationality'] }}"></ion-input>
         </ion-item>
 
-        <ion-item>
-          <ion-label stacked>Country of Residence</ion-label>
-          <ion-input disabled value="{{ applicant['country_of_residence'] }}"></ion-input>
-        </ion-item>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label stacked>Gender</ion-label>
+              <ion-input disabled value="{{ applicant['gender'] == '1' ? 'Male' : 'Female' }}"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-label stacked>Race</ion-label>
+              <ion-input disabled value="{{ decodeRace(applicant['race']) }}"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
 
-        <ion-item>
-          <ion-label stacked>Country of Birth</ion-label>
-          <ion-input disabled value="{{ applicant['birth_country'] }}"></ion-input>
-        </ion-item>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label stacked>Country of Residence</ion-label>
+              <ion-input disabled value="{{ applicant['country_of_residence'] }}"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-label stacked>Country of Birth</ion-label>
+              <ion-input disabled value="{{ applicant['birth_country'] }}"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
 
       </ion-card-content>
     </ion-card>
 
     <ion-card>
       <ion-card-header>
-        Video Analysis
+        <ion-icon name="eye"></ion-icon> Video Analysis
       </ion-card-header>
       <ion-card-content>
 
@@ -103,7 +123,7 @@
 
     <ion-card>
       <ion-card-header>
-        Contact Information
+        <ion-icon name="call"></ion-icon> Contact Information
       </ion-card-header>
       <ion-card-content>
         <ion-item>

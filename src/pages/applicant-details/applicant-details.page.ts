@@ -99,9 +99,16 @@ export class ApplicationDetailsPage implements OnInit {
   }
 
   showActions() {
-    const actionSheet = this.actionSheetCtrl.create({
-      title: 'Actions',
-      buttons: [
+    let buttons =
+      [
+        {
+          text: 'Advance to Phase 2',
+          handler: () => {
+            this.applicantsService.changePhase(this.applicant.hash, 2).subscribe(response => {
+              this.navCtrl.pop();
+            });
+          }
+        },
         {
           text: 'Delete',
           handler: () => {
@@ -114,7 +121,21 @@ export class ApplicationDetailsPage implements OnInit {
           text: 'Cancel',
           role: 'cancel',
         }
-      ]
+      ];
+
+    if (this.applicant['application_stage'] === 2) {
+      buttons[0] = {
+        text: 'Move back to Phase 1',
+        handler: () => {
+          this.applicantsService.changePhase(this.applicant.hash, 1).subscribe(response => {
+            this.navCtrl.pop();
+          });
+        }
+      }
+    }
+    const actionSheet = this.actionSheetCtrl.create({
+      title: 'Actions',
+      buttons: buttons,
     });
 
     actionSheet.present();
@@ -124,5 +145,18 @@ export class ApplicationDetailsPage implements OnInit {
     this.navCtrl.push(VideoPlayerPage, {
       item: this.applicant
     });
+  }
+
+  decodeRace(id: number) {
+    switch (id) {
+      case 1:
+        return 'Chinese';
+      case 2:
+        return 'Malay';
+      case 3:
+        return 'Indian';
+      case 4:
+        return 'Others';
+    }
   }
 }

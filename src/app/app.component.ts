@@ -2,10 +2,10 @@ import {Component, ViewChild} from '@angular/core';
 import {Nav, Platform} from 'ionic-angular';
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
-
-import {HomePage} from '../pages/home/home';
 import {ApplicantsPage} from '../pages/list/list';
 import {Phase2ApplicantsPage} from "../pages/list2/list";
+import {Http} from "@angular/http";
+import {MainConfig} from "../common/mainConfig";
 
 @Component({
   templateUrl: 'app.html'
@@ -15,17 +15,36 @@ export class MyApp {
 
   rootPage: any = ApplicantsPage;
 
-  pages: Array<{ title: string, component: any }>;
+  pages: Array<{ title: string, component: any, count: number }>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform,
+              public statusBar: StatusBar,
+              public splashScreen: SplashScreen,
+              public http: Http,) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
-      {title: 'Home', component: HomePage},
-      {title: 'Phase 1 Applicants', component: ApplicantsPage},
-      {title: 'Phase 2 Applicants', component: Phase2ApplicantsPage},
+      // {title: 'Home', component: HomePage, count: 0},
+      // {title: ''}
+      {title: 'Phase 1 Applicants', component: ApplicantsPage, count: 0},
+      {title: 'Phase 2 Applicants', component: Phase2ApplicantsPage, count: 0},
     ];
+
+    this.loadPhasesCount();
+  }
+
+  menuOpened() {
+    this.loadPhasesCount();
+  }
+
+  loadPhasesCount() {
+    this.http.get(MainConfig.baseUrl + 'form-submission/count-phases/').subscribe(response => {
+      let json = response.json()['response'];
+
+      this.pages[0]['count'] = json['phase1'];
+      this.pages[1]['count'] = json['phase2'];
+    });
   }
 
   initializeApp() {
