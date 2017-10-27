@@ -3,7 +3,7 @@ import {NavController} from 'ionic-angular';
 
 @Component({
   selector: 'page-history',
-  templateUrl: 'history.html'
+  templateUrl: 'history.template.html'
 })
 export class HistoryPage {
 
