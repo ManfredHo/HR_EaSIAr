@@ -31,26 +31,17 @@ h5 {
   margin-bottom: 32px;
 }
 
-   .button-inner {
-    background-color: rgb(40, 40, 115);
-    color: rgb(245, 160, 20);
+   .input-wrapper{
+    background-color: rgba(255, 255, 255,0.4);
+    color: rgb(40, 40, 115);
+     font-size: 16px;
+  text-align: center;
+  font-family: Georgia, serif;
   }
 
-  .button-md-primary {
-    background-color: rgb(40, 40, 115);
-  }
-  .button-md {
-    background-color: rgb(40, 40, 115);
-  }
-
-  .button-md:hover {
-    background-color: rgb(40, 40, 115);
-  }
-
-  .button-md:hover:not(.disable-hover) {
-    background-color: rgb(40, 40, 115);
-  }
-
+ .item.item-block.item-md{
+  colour: rgb(115, 115, 115);
+}
 }
 
 
