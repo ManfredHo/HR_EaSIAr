@@ -104,7 +104,7 @@ export class ApplicationDetailsPage implements OnInit {
         {
           text: 'Advance to Phase 2',
           handler: () => {
-            this.applicantsService.changePhase(this.applicant.hash, 2).subscribe(response => {
+            this.applicantsService.changePhase(this.applicant['hash'], 2).subscribe(response => {
               this.navCtrl.pop();
             });
           }
@@ -112,7 +112,7 @@ export class ApplicationDetailsPage implements OnInit {
         {
           text: 'Delete',
           handler: () => {
-            this.applicantsService.deleteApplicant(this.applicant.hash).subscribe(response => {
+            this.applicantsService.deleteApplicant(this.applicant['hash']).subscribe(response => {
               this.navCtrl.pop();
             });
           }
@@ -127,7 +127,7 @@ export class ApplicationDetailsPage implements OnInit {
       buttons[0] = {
         text: 'Move back to Phase 1',
         handler: () => {
-          this.applicantsService.changePhase(this.applicant.hash, 1).subscribe(response => {
+          this.applicantsService.changePhase(this.applicant['hash'], 1).subscribe(response => {
             this.navCtrl.pop();
           });
         }
