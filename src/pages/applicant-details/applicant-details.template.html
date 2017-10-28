@@ -26,7 +26,8 @@
       <ion-card-content>
 
         <div style="text-align: center;">
-          <img [style.backgroundImage]="'url('+userImage+')'" class="user-image"/>
+          <img [style.backgroundImage]="'url('+userImage+')'" [style.transform]="'rotate('+userImageRotation+'deg)'"
+               class="user-image"/>
         </div>
 
         <!--<ion-item>-->
@@ -60,18 +61,18 @@
         </ion-row>
 
         <!--<ion-row>-->
-          <!--<ion-col>-->
-            <!--<ion-item>-->
-              <!--<ion-label stacked>Country of Residence</ion-label>-->
-              <!--<ion-input disabled value="{{ applicant['country_of_residence'] }}"></ion-input>-->
-            <!--</ion-item>-->
-          <!--</ion-col>-->
-          <!--<ion-col>-->
-            <!--<ion-item>-->
-              <!--<ion-label stacked>Country of Birth</ion-label>-->
-              <!--<ion-input disabled value="{{ applicant['birth_country'] }}"></ion-input>-->
-            <!--</ion-item>-->
-          <!--</ion-col>-->
+        <!--<ion-col>-->
+        <!--<ion-item>-->
+        <!--<ion-label stacked>Country of Residence</ion-label>-->
+        <!--<ion-input disabled value="{{ applicant['country_of_residence'] }}"></ion-input>-->
+        <!--</ion-item>-->
+        <!--</ion-col>-->
+        <!--<ion-col>-->
+        <!--<ion-item>-->
+        <!--<ion-label stacked>Country of Birth</ion-label>-->
+        <!--<ion-input disabled value="{{ applicant['birth_country'] }}"></ion-input>-->
+        <!--</ion-item>-->
+        <!--</ion-col>-->
         <!--</ion-row>-->
 
       </ion-card-content>
@@ -137,6 +138,18 @@
 
     <ion-card>
       <ion-card-header>
+        Submission Details
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-label stacked>Timestamp</ion-label>
+          <ion-input disabled value="{{ applicant['created'] | date : 'medium'}}"></ion-input>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
         <ion-icon name="call"></ion-icon>
         Contact Information
       </ion-card-header>
@@ -153,16 +166,6 @@
       </ion-card-content>
     </ion-card>
 
-    <ion-card>
-      <ion-card-header>
-        Submission Details
-      </ion-card-header>
-      <ion-card-content>
-        <ion-item>
-          <ion-label stacked>Timestamp</ion-label>
-          <ion-input disabled value="{{ applicant['created'] | date : 'medium'}}"></ion-input>
-        </ion-item>
-      </ion-card-content>
-    </ion-card>
+
   </div>
 </ion-content>

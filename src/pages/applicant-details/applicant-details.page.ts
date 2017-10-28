@@ -25,6 +25,8 @@ export class ApplicationDetailsPage implements OnInit {
   videoDuration: string = '';
   videoQuality: string = '';
 
+  userImageRotation: number = 0;
+
   constructor(public navCtrl: NavController, private navParams: NavParams,
               private applicantsService: ApplicantsService,
               private videoAnalyticsService: VideoAnalyticsService,
@@ -65,6 +67,14 @@ export class ApplicationDetailsPage implements OnInit {
       }
 
       this.displayAnalysis();
+
+      if (analysis.length > 0) {
+        if (analysis[0]['face_details'] !== undefined && analysis[0]['face_details'][0] !== undefined) {
+          let pose = analysis[0]['face_details'][0]['Pose'];
+          this.userImageRotation = -1 * Math.round(pose['Roll'] / 90) * 90;
+        }
+      }
+
     });
   }
 
