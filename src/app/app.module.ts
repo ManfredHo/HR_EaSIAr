@@ -16,6 +16,7 @@ import {VideoChartComponent} from "../components/video-chart.component";
 import {VideoPlayerPage} from "../pages/video-player/video-player.page";
 import {Phase2ApplicantsPage} from "../pages/list2/list";
 import {HistoryPage} from "../pages/history/history.page";
+import {SettingsPage} from "../pages/settings/settings.page";
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import {HistoryPage} from "../pages/history/history.page";
     Phase2ApplicantsPage,
     ApplicationDetailsPage,
     HistoryPage,
+    SettingsPage,
 
     VideoChartComponent,
     VideoPlayerPage
@@ -43,6 +45,7 @@ import {HistoryPage} from "../pages/history/history.page";
     ApplicationDetailsPage,
     VideoPlayerPage,
     HistoryPage,
+    SettingsPage
   ],
   providers: [
     StatusBar,

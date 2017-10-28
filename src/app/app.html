@@ -8,6 +8,7 @@
   <ion-content>
     <ion-list>
       <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)" class="menu-item">
+        <ion-icon name="{{p.icon}}" style="margin-right:8px"></ion-icon>
         {{p.title}}
 
         <div class="counter" *ngIf="p.count > 0">{{p.count}}</div>

@@ -8,6 +8,7 @@ import {Http} from "@angular/http";
 import {MainConfig} from "../common/mainConfig";
 import {HomePage} from "../pages/home/home";
 import {HistoryPage} from "../pages/history/history.page";
+import {SettingsPage} from "../pages/settings/settings.page";
 
 @Component({
   templateUrl: 'app.html'
@@ -17,7 +18,7 @@ export class MyApp {
 
   rootPage: any = HomePage;
 
-  pages: Array<{ title: string, component: any, count: number }>;
+  pages: Array<{ icon:string, title: string, component: any, count: number }>;
 
   constructor(public platform: Platform,
               public statusBar: StatusBar,
@@ -27,11 +28,12 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      {title: 'Home', component: HomePage, count: 0},
-      {title: 'Phase 1 Applicants', component: ApplicantsPage, count: 0},
-      {title: 'Phase 2 Applicants', component: Phase2ApplicantsPage, count: 0},
+      {icon: 'home', title: 'Home', component: HomePage, count: 0},
+      {icon: 'people', title: 'Phase 1 Applicants', component: ApplicantsPage, count: 0},
+      {icon: 'people', title: 'Phase 2 Applicants', component: Phase2ApplicantsPage, count: 0},
 
-      {title: 'History', component: HistoryPage, count: 0},
+      {icon: 'settings', title: 'HR Criteria', component: SettingsPage, count: 0},
+      {icon: 'time', title: 'History', component: HistoryPage, count: 0},
     ];
 
     this.loadPhasesCount();
